@@ -1,0 +1,11 @@
+services:
+  dev:
+    container_name: store-inventory-and-sales-manager_c
+    image: store-inventory-and-sales-manager_i
+    build: .
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: pnpm run dev

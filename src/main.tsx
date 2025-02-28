@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import { App } from './features/app';
 
+import './assets/fonts/fonts.css';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

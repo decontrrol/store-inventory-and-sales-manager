@@ -48,4 +48,5 @@ export default tseslint.config({
   },
 });
 ```
+
 # store-inventory-and-sales-manager

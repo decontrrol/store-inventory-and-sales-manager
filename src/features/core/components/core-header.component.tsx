@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { cn } from '#/lib/utils';
+import { BaseIcon } from '#/features/base/components/base-icon.component';
 
 import type { ComponentProps } from 'react';
 
@@ -9,8 +10,8 @@ export const CoreHeader = memo(function ({
   ...moreProps
 }: ComponentProps<'header'>) {
   return (
-    <header className={cn('h-4 w-full bg-green-600', className)} {...moreProps}>
-      header
+    <header className={cn('w-full bg-green-600', className)} {...moreProps}>
+      <BaseIcon name='panel-left-dashed' />
     </header>
   );
 });

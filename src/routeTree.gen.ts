@@ -10,8 +10,9 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root';
-import { Route as RoutesImport } from './r./routes/routes';
+import { Route as rootRoute } from './routes/__root'
+import { Route as RoutesImport } from './routes/routes'
+import { Route as RouteTreeImport } from './routes/route-tree'
 
 // Create/Update Routes
 
@@ -19,57 +20,75 @@ const RoutesRoute = RoutesImport.update({
   id: '/routes',
   path: '/routes',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
+
+const RouteTreeRoute = RouteTreeImport.update({
+  id: '/route-tree',
+  path: '/route-tree',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/route-tree': {
+      id: '/route-tree'
+      path: '/route-tree'
+      fullPath: '/route-tree'
+      preLoaderRoute: typeof RouteTreeImport
+      parentRoute: typeof rootRoute
+    }
     '/routes': {
-      id: '/routes';
-      path: '/routes';
-      fullPath: '/routes';
-      preLoaderRoute: typeof RoutesImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/routes'
+      path: '/routes'
+      fullPath: '/routes'
+      preLoaderRoute: typeof RoutesImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/routes': typeof RoutesRoute;
+  '/route-tree': typeof RouteTreeRoute
+  '/routes': typeof RoutesRoute
 }
 
 export interface FileRoutesByTo {
-  '/routes': typeof RoutesRoute;
+  '/route-tree': typeof RouteTreeRoute
+  '/routes': typeof RoutesRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  '/routes': typeof RoutesRoute;
+  __root__: typeof rootRoute
+  '/route-tree': typeof RouteTreeRoute
+  '/routes': typeof RoutesRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/routes';
-  fileRoutesByTo: FileRoutesByTo;
-  to: '/routes';
-  id: '__root__' | '/routes';
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/route-tree' | '/routes'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/route-tree' | '/routes'
+  id: '__root__' | '/route-tree' | '/routes'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  RoutesRoute: typeof RoutesRoute;
+  RouteTreeRoute: typeof RouteTreeRoute
+  RoutesRoute: typeof RoutesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  RouteTreeRoute: RouteTreeRoute,
   RoutesRoute: RoutesRoute,
-};
+}
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {
@@ -77,11 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/route-tree",
         "/routes"
       ]
     },
+    "/route-tree": {
+      "filePath": "route-tree.tsx"
+    },
     "/routes": {
-      "filePath": "routes.tsx"
+      "filePath": "routes.ts"
     }
   }
 }

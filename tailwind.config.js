@@ -7,10 +7,9 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+      width: {
+        'sidebar-collapsed': '58px',
+        'sidebar-expanded': '282px',
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -57,6 +56,11 @@ export default {
       fontFamily: {
         body: ['var(--font-body)', ...defaultTheme.fontFamily.sans],
         head: ['var(--font-head)', ...defaultTheme.fontFamily.sans],
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },

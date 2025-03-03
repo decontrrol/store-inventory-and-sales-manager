@@ -5,6 +5,6 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "tailwindFunctions": ["cx"],
+  "tailwindFunctions": ["cn"],
   "plugins": ["prettier-plugin-tailwindcss"]
 }

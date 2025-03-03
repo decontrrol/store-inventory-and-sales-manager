@@ -1,28 +1,17 @@
-import { Link, Outlet } from '@tanstack/react-router';
+import { Outlet } from '@tanstack/react-router';
 
-// TEMP
-const activeProps = {
-  className: 'underline',
-};
+import { CoreSidebar } from './core-sidebar.component';
+import { CoreMain } from './core-main.component';
+import { CoreHeader } from './core-header.component';
 
 export function CoreLayout() {
   return (
     <div>
-      <nav>
-        <ul className='flex items-center gap-2.5'>
-          <li>
-            <Link to='/dashboard' activeProps={activeProps}>
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to='/products' activeProps={activeProps}>
-              Products
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <Outlet />
+      <CoreSidebar />
+      <CoreMain id='main'>
+        <CoreHeader />
+        <Outlet />
+      </CoreMain>
     </div>
   );
 }

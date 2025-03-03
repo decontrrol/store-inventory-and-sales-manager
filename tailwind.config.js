@@ -7,7 +7,7 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
     extend: {
-      width: {
+      spacing: {
         'sidebar-collapsed': '58px',
         'sidebar-expanded': '282px',
       },

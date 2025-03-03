@@ -29,14 +29,16 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    /* custom */
+    --sidebar-w-collapsed: 58px;
+    --sidebar-w-expanded: 282px;
+    --font-body: Body;
+    --font-head: Head;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* variables */
-    --font-body: Body;
-    --font-head: Head;
   }
 
   .dark {

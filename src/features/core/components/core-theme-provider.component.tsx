@@ -64,6 +64,8 @@ export function CoreThemeProvider({
   );
 }
 
+CoreThemeProvider.displayName = 'CoreThemeProvider';
+
 // export const useCoreTheme = () => {
 //   const context = useContext(ThemeProviderContext);
 

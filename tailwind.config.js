@@ -8,12 +8,16 @@ export default {
   theme: {
     extend: {
       spacing: {
-        'sidebar-collapsed': '58px',
-        'sidebar-expanded': '282px',
+        'sidebar-collapsed': 'var(--sidebar-w-collapsed)',
+        'sidebar-expanded': 'var(--sidebar-w-expanded)',
+        'header-compact': 'var(--header-h-compact)',
+        'header-full': 'var(--header-h-full)',
       },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: 'var(--background)',
+        'background-hover': 'var(--background-hover)',
+        foreground: 'var(--foreground)',
+        sidebar: 'var(--sidebar)',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -24,7 +28,7 @@ export default {
         },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          foreground: 'var(--primary-foreground)',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',

@@ -1,1 +1,1 @@
-export type IconName = 'panel-left-dashed';
+export type IconName = 'panel-left-dashed' | 'sliders-horizontal';

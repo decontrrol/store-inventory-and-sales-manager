@@ -2,15 +2,21 @@ import { cn } from '#/lib/utils';
 
 import type { ComponentProps } from 'react';
 
+type Props = ComponentProps<'main'> & {
+  isCollapsed?: boolean;
+};
+
 export function CoreMain({
   className,
   children,
+  isCollapsed,
   ...moreProps
-}: ComponentProps<'main'>) {
+}: Props) {
   return (
     <main
       className={cn(
-        'ml-sidebar-collapsed relative flex h-[2000px] min-h-screen w-full flex-1 flex-col transition-[margin] duration-300',
+        'relative flex h-[2000px] min-h-screen w-full flex-1 flex-col transition-[margin] duration-300',
+        isCollapsed ? 'ml-sidebar-collapsed' : 'ml-sidebar-expanded',
         className,
       )}
       {...moreProps}
@@ -19,3 +25,5 @@ export function CoreMain({
     </main>
   );
 }
+
+CoreMain.displayName = 'CoreMain';

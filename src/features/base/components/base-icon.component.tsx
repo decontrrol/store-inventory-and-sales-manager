@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react';
-import { PanelLeftDashed } from 'lucide-react';
+import { PanelLeftDashed, SlidersHorizontal } from 'lucide-react';
 
 import type {
   ComponentProps,
@@ -17,13 +17,24 @@ type Props = ComponentProps<
   name: IconName;
 };
 
-export const BaseIcon = memo(function ({ name, size, ...moreProps }: Props) {
+export const BaseIcon = memo(function ({
+  name,
+  size,
+  strokeWidth,
+  ...moreProps
+}: Props) {
   const Icon = useMemo(() => {
     switch (name) {
       case 'panel-left-dashed':
         return PanelLeftDashed;
+      case 'sliders-horizontal':
+        return SlidersHorizontal;
     }
   }, [name]);
 
-  return <Icon size={size || 24} {...moreProps} />;
+  return (
+    <Icon size={size || 24} strokeWidth={strokeWidth || 1.75} {...moreProps} />
+  );
 });
+
+BaseIcon.displayName = 'BaseIcon';

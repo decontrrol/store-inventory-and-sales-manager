@@ -32,6 +32,8 @@
     /* custom */
     --sidebar-w-collapsed: 58px;
     --sidebar-w-expanded: 282px;
+    --header-h-compact: 38px;
+    --header-h-full: 58px;
     --font-body: Body;
     --font-head: Head;
 
@@ -42,14 +44,16 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: #404040;
+    --background-hover: rgba(0, 0, 0, 0.2);
+    --foreground: #e5e5b3;
+    --sidebar: #383838;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary-foreground: #e5e5b3;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;

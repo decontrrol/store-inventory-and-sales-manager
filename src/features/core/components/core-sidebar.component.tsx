@@ -4,14 +4,20 @@ import { cn } from '#/lib/utils';
 
 import type { ComponentProps } from 'react';
 
+type Props = ComponentProps<'aside'> & {
+  isCollapsed?: boolean;
+};
+
 export const CoreSidebar = memo(function ({
   className,
+  isCollapsed,
   ...moreProps
-}: ComponentProps<'aside'>) {
+}: Props) {
   return (
     <aside
       className={cn(
-        'w-sidebar-collapsed fixed left-0 top-0 z-50 h-screen shrink-0 bg-red-700 transition-[width] duration-300',
+        'bg-sidebar fixed left-0 top-0 z-50 h-screen shrink-0 transition-[width] duration-300',
+        isCollapsed ? 'w-sidebar-collapsed' : 'w-sidebar-expanded',
         className,
       )}
       {...moreProps}
@@ -20,3 +26,5 @@ export const CoreSidebar = memo(function ({
     </aside>
   );
 });
+
+CoreSidebar.displayName = 'CoreSidebar';

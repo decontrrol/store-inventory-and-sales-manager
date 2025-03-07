@@ -29,7 +29,7 @@ export const CoreHeader = memo(function ({
       <div className='flex gap-2.5'>
         <BaseIconButton
           name='panel-left-dashed'
-          onPress={handleToggleLeftSideSidebar}
+          onClick={handleToggleLeftSideSidebar}
         />
         <BaseIconButton name='sliders-horizontal' />
       </div>

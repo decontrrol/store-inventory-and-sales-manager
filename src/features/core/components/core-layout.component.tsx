@@ -12,9 +12,9 @@ export function CoreLayout() {
   );
 
   return (
-    <div>
+    <div className='flex items-start justify-start'>
       <CoreSidebar isCollapsed={isLeftSidebarCollapsed} />
-      <CoreMain id='main' isCollapsed={isLeftSidebarCollapsed}>
+      <CoreMain id='main'>
         <CoreHeader />
         <Outlet />
       </CoreMain>

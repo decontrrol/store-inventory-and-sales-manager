@@ -1,28 +1,26 @@
 import { cn } from '#/lib/utils';
+import { BaseBackdrop } from '#/features/base/components/base-backdrop.component';
 
 import type { ComponentProps } from 'react';
-
-type Props = ComponentProps<'main'> & {
-  isCollapsed?: boolean;
-};
 
 export function CoreMain({
   className,
   children,
-  isCollapsed,
   ...moreProps
-}: Props) {
+}: ComponentProps<'main'>) {
   return (
-    <main
-      className={cn(
-        'relative flex h-[2000px] min-h-screen w-auto flex-1 flex-col transition-[margin] duration-300',
-        isCollapsed ? 'ml-sidebar-collapsed' : 'ml-sidebar-expanded',
-        className,
-      )}
-      {...moreProps}
-    >
-      {children}
-    </main>
+    <>
+      <BaseBackdrop className='fixed left-0 top-0 -z-20 flex h-full w-full' />
+      <main
+        className={cn(
+          'relative flex h-[2000px] min-h-screen w-auto flex-1 flex-col bg-transparent duration-300',
+          className,
+        )}
+        {...moreProps}
+      >
+        {children}
+      </main>
+    </>
   );
 }
 

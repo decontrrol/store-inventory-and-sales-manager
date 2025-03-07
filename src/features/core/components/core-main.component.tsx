@@ -15,7 +15,7 @@ export function CoreMain({
   return (
     <main
       className={cn(
-        'relative flex h-[2000px] min-h-screen w-full flex-1 flex-col transition-[margin] duration-300',
+        'relative flex h-[2000px] min-h-screen w-auto flex-1 flex-col transition-[margin] duration-300',
         isCollapsed ? 'ml-sidebar-collapsed' : 'ml-sidebar-expanded',
         className,
       )}

@@ -1,7 +1,7 @@
 services:
   dev:
-    container_name: store-inventory-and-sales-manager_c
-    image: store-inventory-and-sales-manager_i
+    container_name: store-inventory-and-sales-manager-web_c
+    image: store-inventory-and-sales-manager-web_i
     build: .
     ports:
       - '5173:5173'

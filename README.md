@@ -49,4 +49,4 @@ export default tseslint.config({
 });
 ```
 
-# store-inventory-and-sales-manager
+# store-inventory-and-sales-manager-web
